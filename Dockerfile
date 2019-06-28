@@ -8,4 +8,8 @@ RUN /cloner.sh
 ADD configure.sh /configure.sh
 RUN /configure.sh
 
+ADD clis.sh /clis.sh
+RUN /clis.sh
+
 ADD profile /root/.profile
+ADD gitconfig /root/.gitconfig
