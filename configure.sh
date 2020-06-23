@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo 'Adding current user to docker group, you may be promted for your sudo password'
+echo 'Adding current user to docker group, you may be prompted for your sudo password'
 user=$(whoami)
 sudo gpasswd -a $user docker
 

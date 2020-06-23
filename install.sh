@@ -52,9 +52,6 @@ sudo ln -s $(which fdfind) /usr/bin/fd
 # last update
 apt-get update
 
-# install the rest
-apt-get install -yq azure-cli
-
 # neovim
 wget https://github.com/neovim/neovim/releases/download/v0.4.3/nvim.appimage
 chmod +x nvim.appimage
@@ -68,28 +65,6 @@ tar -xvf go*
 rm -rf /usr/local/go
 mv go /usr/local
 rm -rf /tmp/installscratch
-
-# ruby TODO figure out a better way to do this
-#gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
-#curl -sSL https://get.rvm.io | bash -s stable --ruby
-
-# git-duet
-mkdir /tmp/git-duet
-pushd /tmp/git-duet
-  url=$(curl -s https://api.github.com/repos/git-duet/git-duet/releases | jq -r '.[0].assets[] | select(.name=="linux_amd64.tar.gz").browser_download_url')
-  wget $url
-  tar -xvf linux_amd64.tar.gz
-  mv * /usr/local/bin/
-popd
-
-# git-duet
-mkdir /tmp/git-duet
-pushd /tmp/git-duet
-  url=$(curl -s https://api.github.com/repos/genuinetools/sshb0t/releases | jq -r '.[0].assets[] | select(.name=="sshb0t-linux-amd64").browser_download_url')
-  wget -O sshb0t $url
-  chmod +x sshb0t
-  mv sshb0t /usr/local/bin/
-popd
 
 # cf
 mkdir /tmp/cf
